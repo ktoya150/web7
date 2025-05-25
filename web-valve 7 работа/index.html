@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <title>ValveOrigins - Valve - Головна</title>
+  <link href="style/style.css" rel="stylesheet"/>
+</head>
+<body>
+  <header class="site-header" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(6px); padding: 20px 40px; border-bottom: 2px solid #ffb000; display: flex; justify-content: flex-start; align-items: center; gap: 40px;">
+    <div style="font-size: 24px; font-weight: bold; color: #ffb000; text-shadow: 0 0 10px rgba(255,176,0,0.8);">
+      ValveOrigins
+    </div>
+    <nav class="navbar" style="display: flex; gap: 12px;">
+      <a href="index.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Головна</a>
+      <a href="products.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Ігри</a>
+      <a href="founders.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Засновники</a>
+      <a href="history.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Історія</a>
+      <a href="office.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Офіс</a>
+      <a href="valve_head.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Людина-вентель</a>
+      <a href="test.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Інтерактив</a>
+            <a href="form.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Форма</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="background-color: rgba(0, 0, 0, 0.6); border-radius: 10px; padding: 20px;">
+      <p>Valve Corporation – легендарна студія, що подарувала світу Half-Life, Counter-Strike, Dota 2, Portal та платформу Steam.</p>
+      <p>З моменту заснування у 1996 році вона задає нові стандарти в геймдеві, кіберспорті та технологіях віртуальної реальності.</p>
+    </section>
+
+    <section class="achievements" style="display: flex; justify-content: space-around; padding: 40px; background-color: rgba(0, 0, 0, 0.6); border-radius: 10px;">
+      <div>
+        <h3>132 млн+</h3>
+        <p>користувачів Steam</p>
+      </div>
+      <div>
+        <h3>29 років</h3>
+        <p>інновацій в іграх</p>
+      </div>
+      <div>
+        <h3>10+ ігор</h3>
+        <p>які змінили індустрію</p>
+      </div>
+    </section>
+
+    <section class="quote" style="text-align: center; padding: 30px; background-color: rgba(0, 0, 0, 0.6); border-radius: 10px;">
+      <blockquote>“Valve не просто створює ігри — вона формує індустрію.”</blockquote>
+    </section>
+
+    <div class="pseudo-button-container">
+      <div class="pseudo-button" id="dynamicButton">Переглянути ігри</div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Valve Origins.</p>
+  </footer>
+
+  <script>
+    const button = document.getElementById("dynamicButton");
+    let toggled = false;
+
+    button.addEventListener("click", () => {
+      toggled = !toggled;
+      button.textContent = toggled ? "Завантаження..." : "Переглянути ігри";
+      if (toggled) {
+        setTimeout(() => {
+          window.location.href = "products.html";
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

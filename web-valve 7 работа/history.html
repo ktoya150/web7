@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<title>ValveOrigins - Історія Valve</title>
+<link href="style/style.css" rel="stylesheet"/>
+<style>
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 30px;
+    }
+
+    .history-section {
+      display: flex;
+      gap: 20px;
+      background: rgba(20, 20, 20, 0.9);
+      border-left: 5px solid #ffb000;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(255, 176, 0, 0.1);
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    .history-section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(255, 176, 0, 0.2);
+    }
+
+    .history-text {
+      flex: 1 1 60%;
+    }
+
+    .history-text h2 {
+      margin-top: 0;
+      color: #ffb000;
+    }
+
+    .history-image {
+      flex: 1 1 35%;
+    }
+
+    .history-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 1000px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      .history-section {
+        flex-direction: column;
+      }
+    }
+     footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaaaaa;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(6px); padding: 20px 40px; border-bottom: 2px solid #ffb000; display: flex; justify-content: flex-start; align-items: center; gap: 40px;">
+  <div style="font-size: 24px; font-weight: bold; color: #ffb000; text-shadow: 0 0 10px rgba(255,176,0,0.8);">
+    ValveOrigins
+  </div>
+  <nav class="navbar" style="display: flex; gap: 12px;">
+    <a href="index.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Головна</a>
+      <a href="products.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Ігри</a>
+      <a href="founders.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Засновники</a>
+      <a href="history.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Історія</a>
+      <a href="office.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Офіс</a>
+      <a href="valve_head.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Людина-вентель</a>
+      <a href="test.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Інтерактив</a>
+            <a href="form.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Форма</a>
+  </nav>
+</header>
+<main>
+<section class="history-section">
+<div class="history-text">
+<h2>1996 — Заснування Valve</h2>
+<p>Valve Corporation була заснована в 1996 році колишніми співробітниками Microsoft – Гейбом Ньюеллом та Майком Харрінгтоном.</p>
+<p>Обидва засновники працювали в Microsoft і брали участь у створенні Windows. Надихнувшись можливостями 3D-графіки та популярністю ігор на кшталт Quake, вони вирішили створити власну ігрову студію.</p>
+</div>
+<div class="history-image">
+<img alt="Гейб Ньюелл" src="media/gabe_newell.jfif"/>
+</div>
+</section>
+<section class="history-section">
+<div class="history-text">
+<h2>Перші кроки Valve</h2>
+<p>Ньюелл і Харрінгтон вклали особисті кошти та зареєстрували компанію Valve L.L.C. Перший офіс студії знаходився у Кіркленді, штат Вашингтон.</p>
+<p>Перший проект — шутер Half-Life (1998), який став революцією в ігровій індустрії.</p>
+</div>
+<div class="history-image">
+<img alt="Half-Life" src="media/halflife.jfif"/>
+</div>
+</section>
+<section class="history-section">
+<div class="history-text">
+<h2>2000 — Зміни у керівництві</h2>
+<p>У 2000 році Майк Харрінгтон залишив компанію, залишивши Гейба Ньюелла єдиним власником Valve.</p>
+<p>З цього моменту компанія почала активно розвиватися, розробляючи нові проекти та сервіси.</p>
+</div>
+<div class="history-image">
+<img alt="Valve Logo" src="media/valve_logo.jfif"/>
+</div>
+</section>
+<section class="history-section">
+<div class="history-text">
+<h2>2003 — Запуск Steam</h2>
+<p>У 2003 році Valve запустила Steam — цифрову платформу для розповсюдження ігор. Вона змінила підхід до ігор по всьому світу.</p>
+<p>До 2010-х років Steam став головним джерелом доходу компанії.</p>
+</div>
+<div class="history-image">
+<img alt="Steam Logo" src="media/steam_logo.jfif"/>
+</div>
+</section>
+<section class="history-section">
+<div class="history-text">
+<h2>Ігрові проекти Valve</h2>
+<p>Valve створила культові ігри: Half-Life, Portal, Counter-Strike, Dota 2, Team Fortress 2 та інші.</p>
+<p>Ці ігри визначають сучасний вигляд ігрової індустрії.</p>
+</div>
+<div class="history-image">
+<img alt="Ігри Valve" src="media/valve_games.jfif"/>
+</div>
+</section>
+<section class="history-section">
+<div class="history-text">
+<h2>Розвиток апаратного забезпечення</h2>
+<p>Valve також випустила власне ігрове "залізо": Steam Deck, Valve Index VR.</p>
+<p>Це дозволило компанії вийти за межі лише розробки програмного забезпечення.</p>
+</div>
+<div class="history-image">
+<img alt="Steam Deck" src="media/steam_deck.jfif"/>
+</div>
+</section>
+<section class="history-section">
+<div class="history-text">
+<h2>Станом на 2025</h2>
+<p>Понад 132 мільйонів активних користувачів Steam. Valve продовжує зростати і впливати на ігрову індустрію.</p>
+</div>
+<div class="history-image">
+<img alt="Steam Users" src="media/steam_users.png"/>
+</div>
+</section>
+</main>
+<div style="text-align: center; margin: 40px 0;">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/gZKVEdBznxw" style="max-width: 100%;" title="YouTube video player" width="560"></iframe>
+</div>
+<footer class="site-footer">
+<p>© 2025 Valve Origins.</p>
+</footer>
+</body>
+</html>

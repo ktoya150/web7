@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<title>ValveOrigins - Засновники Valve</title>
+<link href="style/style.css" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        padding: 20px;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 40px 20px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 500px;
+        background-color: #1f1f1f;
+        border-radius: 12px;
+        overflow: hidden;
+        text-decoration: none;
+        color: white;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+
+    .card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-content h2 {
+        margin-top: 0;
+        font-size: 2em;
+    }
+
+    .card-content p {
+        color: #ccc;
+        font-size: 1.1em;
+    }
+
+    @media (max-width: 1024px) {
+        .card-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaaaaa;
+      margin-top: 40px;
+    }
+</style>
+</head>
+<body>
+<header class="site-header" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(6px); padding: 20px 40px; border-bottom: 2px solid #ffb000; display: flex; justify-content: flex-start; align-items: center; gap: 40px;">
+  <div style="font-size: 24px; font-weight: bold; color: #ffb000; text-shadow: 0 0 10px rgba(255,176,0,0.8);">
+    ValveOrigins
+  </div>
+  <nav class="navbar" style="display: flex; gap: 12px;">
+    <a href="index.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Головна</a>
+      <a href="products.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Ігри</a>
+      <a href="founders.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Засновники</a>
+      <a href="history.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Історія</a>
+      <a href="office.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Офіс</a>
+      <a href="valve_head.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Людина-вентель</a>
+      <a href="test.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Інтерактив</a>
+            <a href="form.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Форма</a>
+  </nav>
+</header>
+<main class="card-container">
+<a class="card" href="gabenewell.html">
+<img alt="Гейб Ньюелл" src="media/gabenewell-photo.jpg"/>
+<div class="card-content">
+<h2>Гейб Ньюелл</h2>
+<p>Співзасновник Valve, який залишив Microsoft, щоб перевернути ігрову індустрію. Ключова фігура у створенні Steam.</p>
+</div>
+</a>
+<a class="card" href="mikeharrington.html">
+<img alt="Майк Харрінгтон" src="media/mike_harrington1.jfif"/>
+<div class="card-content">
+<h2>Майк Харрінгтон</h2>
+<p>Талановитий інженер, який співзаснував Valve та допоміг створити легендарну гру Half-Life. Покинув компанію у 2000 році.</p>
+</div>
+</a>
+</main>
+<footer class="site-footer">
+<p>© 2025 Valve Origins.</p>
+</footer>
+</body>
+</html>

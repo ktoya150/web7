@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<title>ValveOrigins - Майк Харрінгтон</title>
+<link href="style/style.css" rel="stylesheet"/>
+<style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #000000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1 1 calc(33.333% - 20px);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .card img {
+            width: 150px;
+            border-radius: 10px;
+        }
+
+        .card-content {
+            text-align: left;
+        }
+
+        a.back {
+            display: block;
+            text-align: center;
+            color: #e08302;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                flex: 1 1 100%;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .card img {
+                margin: 0 auto;
+            }
+            footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaaaaa;
+      margin-top: 40px;
+    }
+        }
+    </style>
+</head>
+<body>
+<header class="site-header" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(6px); padding: 20px 40px; border-bottom: 2px solid #ffb000; display: flex; justify-content: flex-start; align-items: center; gap: 40px;">
+  <div style="font-size: 24px; font-weight: bold; color: #ffb000; text-shadow: 0 0 10px rgba(255,176,0,0.8);">
+    ValveOrigins
+  </div>
+  <nav class="navbar" style="display: flex; gap: 12px;">
+    <a href="index.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Головна</a>
+    <a href="products.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Ігри</a>
+    <a href="founders.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Засновники</a>
+    <a href="history.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Історія</a>
+    <a href="office.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Офіс</a>
+    <a href="valve_head.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Людина-вентель</a>
+    <a href="test.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Інтерактив</a>
+  </nav>
+</header>
+<div class="container">
+<h2 style="text-align:center; margin-bottom:40px;">Майк Харрінгтон</h2>
+<div class="card-row">
+<div class="card">
+<div class="card-content">
+<h3>Хто такий Майк Харрінгтон</h3>
+<p><strong>Майк Харрінгтон</strong> — американський програміст і підприємець, співзасновник Valve Corporation. Народився 1964 року. Один із ключових розробників легендарної Half-Life (1998).</p>
+</div>
+<img alt="Майк Харрінгтон" src="media/mike_harrington.jfif"/>
+</div>
+<div class="card">
+<div class="card-content">
+<h3>Робота в Microsoft</h3>
+<p>До Valve працював у Microsoft над Windows NT. Саме там познайомився з Гейбом Ньюеллом — майбутнім партнером у створенні власної компанії.</p>
+</div>
+<img alt="Microsoft" src="media/microsoft.png"/>
+</div>
+<div class="card">
+<div class="card-content">
+<h3>Заснування Valve</h3>
+<p>У 1996 році Харрінгтон разом з Ньюеллом заснував Valve. Вони вклали власні кошти у розробку Half-Life, яка згодом змінила історію ігор.</p>
+</div>
+<img alt="Valve" src="media/valve-logo1.png"/>
+</div>
+</div>
+<div class="card-row">
+<div class="card">
+<div class="card-content">
+<h3>Успіх Half-Life</h3>
+<p>Half-Life (1998) стала проривом у жанрі FPS. Харрінгтон був провідним інженером, відповідальним за реалізацію геймплейних і технічних рішень.</p>
+</div>
+<img alt="Half-Life" src="media/halflife.jfif"/>
+</div>
+<div class="card">
+<div class="card-content">
+<h3>Відхід з Valve</h3>
+<p>У 2000 році після релізу Half-Life він залишив Valve, щоб зосередитись на особистому житті. Свою частку передав Ньюеллу.</p>
+</div>
+<img alt="Exit Valve" src="media/exit.png"/>
+</div>
+<div class="card">
+<div class="card-content">
+<h3>Picnik та Google</h3>
+<p>У 2006 році заснував сервіс редагування фото — Picnik. У 2010 році компанію придбав Google, і Харрінгтон став частиною їхньої команди.</p>
+</div>
+<img alt="Picnik" src="media/picnik.png"/>
+</div>
+</div>
+<div class="card-row">
+<div class="card">
+<div class="card-content">
+<h3>Flowplay</h3>
+<p>У 2016 році заснував компанію Flowplay, яка розробляє онлайн-ігри та соціальні ігрові платформи.</p>
+</div>
+<img alt="Flowplay" src="media/flowplay.jfif"/>
+</div>
+<div class="card">
+<div class="card-content">
+<h3>Спадщина</h3>
+<p>Попри коротку кар'єру в Valve, Харрінгтон назавжди залишив слід в історії ігор, як творець Half-Life і один із піонерів жанру FPS.</p>
+</div>
+<img alt="Спадщина" src="media/legacy.png"/>
+</div>
+<div class="card">
+<div class="card-content">
+<h3>Інтерв'ю та виступи</h3>
+<p>Попри скромний публічний образ, Харрінгтон іноді ділиться досвідом у технологічних інтерв’ю та виступах перед молодими розробниками.</p>
+</div>
+<img alt="Інтерв’ю" src="media/interview.png"/>
+</div>
+</div>
+<a class="back" href="founders.html">← Назад до засновників</a>
+</div>
+<footer class="site-footer">
+<p>© 2025 Valve Origins.</p>
+</footer>
+</body>
+</html>

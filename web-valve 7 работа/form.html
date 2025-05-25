@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>ValveOrigins — Форма</title>
+  <link rel="stylesheet" href="style/style.css" />
+  <style>
+    form {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 176, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #ffb000;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 6px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #ffb000;
+      color: black;
+      border: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background-color: #ffaa00;
+    }
+
+    .form-response {
+      text-align: center;
+      color: #e4a812;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(6px); padding: 20px 40px; border-bottom: 2px solid #ffb000; display: flex; justify-content: flex-start; align-items: center; gap: 40px;">
+  <div style="font-size: 24px; font-weight: bold; color: #ffb000;">ValveOrigins</div>
+  <nav class="navbar" style="display: flex; gap: 12px;">
+    <a href="index.html">Головна</a>
+    <a href="products.html">Ігри</a>
+    <a href="founders.html">Засновники</a>
+    <a href="history.html">Історія</a>
+    <a href="office.html">Офіс</a>
+    <a href="valve_head.html">Людина-вентель</a>
+    <a href="test.html">Інтерактив</a>
+    <a href="form.html">Форма</a>
+  </nav>
+</header>
+
+<main>
+  <form id="contactForm">
+    <h2>Зв'язок з ValveOrigins</h2>
+
+    <label for="name">Ім’я:</label>
+    <input type="text" id="name" name="name" placeholder="Введіть ваше ім’я" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
+
+    <label for="phone">Телефон:</label>
+    <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{10,13}$" placeholder="+380..." required />
+
+    <label>Улюблений продукт Valve:</label>
+    <input type="radio" name="game" value="Half-Life" required /> Half-Life
+    <input type="radio" name="game" value="Dota 2" /> Dota 2
+    <input type="radio" name="game" value="CS:GO" /> CS:GO
+
+    <label>Сервіси, якими користуєтесь:</label>
+    <input type="checkbox" name="services" value="Steam" /> Steam
+    <input type="checkbox" name="services" value="Valve Index" /> Valve Index
+    <input type="checkbox" name="services" value="Steam Deck" /> Steam Deck
+
+    <label for="message">Повідомлення:</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <button type="submit">Надіслати</button>
+    <div class="form-response" id="formMessage"></div>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <p>© 2025 Valve Origins.</p>
+</footer>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      game: document.querySelector('input[name="game"]:checked')?.value || "",
+      services: Array.from(document.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value),
+      message: document.getElementById("message").value,
+    };
+
+    localStorage.setItem("formData", JSON.stringify(formData));
+    document.getElementById("formMessage").textContent = "Дані успішно збережено!";
+    this.reset();
+  });
+
+  document.querySelectorAll(".navbar a").forEach(link => {
+    link.addEventListener("mouseover", () => link.style.color = "ffb000");
+    link.addEventListener("mouseout", () => link.style.color = "#fff");
+  });
+</script>
+</body>
+</html>
