@@ -123,14 +123,13 @@
       ValveOrigins
     </div>
     <nav class="navbar">
-     <a href="index.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Головна</a>
-      <a href="products.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Ігри</a>
-      <a href="founders.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Засновники</a>
-      <a href="history.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Історія</a>
-      <a href="office.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Офіс</a>
-      <a href="valve_head.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Людина-вентель</a>
-      <a href="test.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Інтерактив</a>
-            <a href="form.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Форма</a>
+      <a href="index.html">Головна</a>
+      <a href="products.html">Ігри</a>
+      <a href="founders.html">Засновники</a>
+      <a href="history.html">Історія</a>
+      <a href="office.html">Офіс</a>
+      <a href="valve_head.html">Людина-вентель</a>
+      <a href="test.html">Інтерактив</a>
     </nav>
   </header>
 
@@ -189,25 +188,6 @@
     </section>
 
     <section class="card">
-      <h2>Інтерактивне опитування</h2>
-      <form id="surveyForm" onsubmit="return validateForm()">
-        <label for="name">Ім’я:</label>
-        <input type="text" id="name" name="name">
-
-        <label for="age">Вік:</label>
-        <input type="number" id="age" name="age">
-
-        <label>Ваш улюблений жанр гри:</label><br>
-        <label><input type="radio" name="genre" value="action"> Екшн</label>
-        <label><input type="radio" name="genre" value="strategy"> Стратегія</label>
-        <label><input type="radio" name="genre" value="rpg"> RPG</label>
-
-        <input type="submit" value="Надіслати">
-      </form>
-      <p id="resultMessage" style="color: red;"></p>
-    </section>
-
-    <section class="card">
       <h2>Скільки часу ти вже провів у світах Valve?</h2>
       <label for="dota">Годин у Dota 2:</label>
       <input type="number" id="dota" name="dota" min="0">
@@ -242,27 +222,6 @@
         if (answer === '1') score++;
       }
       document.getElementById('result').innerText = `Твій результат: ${score} з 5`;
-    }
-
-    function validateForm() {
-      let name = document.getElementById("name").value.trim();
-      let age = document.getElementById("age").value.trim();
-      let genres = document.getElementsByName("genre");
-      let genreSelected = false;
-      for (let i = 0; i < genres.length; i++) {
-        if (genres[i].checked) {
-          genreSelected = true;
-          break;
-        }
-      }
-
-      if (!name || !age || !genreSelected) {
-        document.getElementById("resultMessage").innerText = "Будь ласка, заповніть усі поля перед відправкою.";
-        return false;
-      }
-
-      document.getElementById("resultMessage").innerText = "Дякуємо за участь в опитуванні!";
-      return false;
     }
 
     function calculateValveTime() {
