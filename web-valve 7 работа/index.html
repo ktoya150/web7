@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
   <meta charset="utf-8"/>
-  <title>ValveOrigins - Valve - Головна</title>
+  <title>ValveOrigins - Головна</title>
   <link href="style/style.css" rel="stylesheet"/>
 </head>
 <body>
@@ -18,7 +18,6 @@
       <a href="office.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Офіс</a>
       <a href="valve_head.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Людина-вентель</a>
       <a href="test.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Інтерактив</a>
-            <a href="form.html" style="padding: 8px 16px; background: #111; border: 2px solid #ffb000; border-radius: 4px; color: #fff; text-decoration: none;">Форма</a>
     </nav>
   </header>
 
@@ -47,8 +46,14 @@
       <blockquote>“Valve не просто створює ігри — вона формує індустрію.”</blockquote>
     </section>
 
-    <div class="pseudo-button-container">
-      <div class="pseudo-button" id="dynamicButton">Переглянути ігри</div>
+    <div class="pseudo-button-container" style="text-align: center; margin: 40px 0;">
+      <div class="pseudo-button" id="dynamicButton" style="display: inline-block; background-color: #222; color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: background 0.3s ease, transform 0.2s ease; user-select: none;">
+        Переглянути ігри
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <p id="surveyResult" style="font-size: 18px; color: #fff; text-shadow: 0 0 8px rgba(255,176,0,0.5); font-weight: bold;"></p>
     </div>
   </main>
 
@@ -69,6 +74,31 @@
         }, 1000);
       }
     });
+
+    function startSurvey() {
+  const name = prompt("Введіть своє ім’я:", "");
+  if (!name) {
+    alert("Дію було скасовано.");
+    return;
+  }
+
+  const surname = prompt("Введіть своє прізвище:", "");
+  if (!surname) {
+    alert("Дію було скасовано.");
+    return;
+  }
+
+  const patronymic = prompt("Як вас по батькові:", "");
+  if (!patronymic) {
+    alert("Дію було скасовано.");
+    return;
+  }
+
+  const full = `Привіт ${surname} ${name} ${patronymic}! Радий тебе бачити!`;
+  alert(full);
+}
+
+    window.onload = startSurvey;
   </script>
 </body>
 </html>
