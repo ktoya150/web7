@@ -5,6 +5,14 @@
   <title>ValveOrigins — Форма</title>
   <link rel="stylesheet" href="style/style.css" />
   <style>
+    body {
+      background-color: #121212;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
     form {
       max-width: 600px;
       margin: 40px auto;
@@ -44,6 +52,7 @@
       font-weight: bold;
       cursor: pointer;
       border-radius: 6px;
+      margin-top: 10px;
     }
 
     button:hover {
@@ -55,6 +64,13 @@
       color: #e4a812;
       font-weight: bold;
       margin-top: 20px;
+    }
+
+    #savedData {
+      text-align: left;
+      color: #e4a812;
+      font-weight: normal;
+      padding: 20px;
     }
   </style>
 </head>
@@ -85,10 +101,10 @@
     <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
 
     <label for="phone">Телефон:</label>
-    <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{10,13}$" placeholder="+380..." required />
+    <input type="tel" id="phone" name="phone" placeholder="+380..." required />
 
     <label>Улюблений продукт Valve:</label>
-    <input type="radio" name="game" value="Half-Life" required /> Half-Life
+    <input type="radio" name="game" value="Half-Life" /> Half-Life
     <input type="radio" name="game" value="Dota 2" /> Dota 2
     <input type="radio" name="game" value="CS:GO" /> CS:GO
 
@@ -102,35 +118,109 @@
 
     <button type="submit">Надіслати</button>
     <div class="form-response" id="formMessage"></div>
+
+    <hr style="margin-top: 30px; border-color: #ffb000;" />
+
+    <button type="button" onclick="showSavedData()">Показати збережені дані</button>
+    <div id="savedData"></div>
   </form>
 </main>
 
 <footer class="site-footer">
-  <p>© 2025 Valve Origins.</p>
+  <p style="text-align: center; color: #888;">© 2025 Valve Origins.</p>
 </footer>
 
 <script>
   document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const game = document.querySelector('input[name="game"]:checked');
+    const services = Array.from(document.querySelectorAll('input[name="services"]:checked'));
+    const message = document.getElementById("message").value.trim();
+    const responseEl = document.getElementById("formMessage");
+
+    responseEl.textContent = "";
+
+    if (name.length < 2) {
+      responseEl.textContent = "Ім’я повинно містити щонайменше 2 символи.";
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      responseEl.textContent = "Невірний формат email.";
+      return;
+    }
+
+    const phoneRegex = /^\+?[0-9]{10,13}$/;
+    if (!phoneRegex.test(phone)) {
+      responseEl.textContent = "Невірний формат телефону. Приклад: +380501234567";
+      return;
+    }
+
+    if (!game) {
+      responseEl.textContent = "Оберіть улюблений продукт Valve.";
+      return;
+    }
+
+    if (services.length === 0) {
+      responseEl.textContent = "Оберіть хоча б один сервіс.";
+      return;
+    }
+
     const formData = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      phone: document.getElementById("phone").value,
-      game: document.querySelector('input[name="game"]:checked')?.value || "",
-      services: Array.from(document.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value),
-      message: document.getElementById("message").value,
+      name,
+      email,
+      phone,
+      game: game.value,
+      services: services.map(cb => cb.value),
+      message,
+      timestamp: new Date().toLocaleString()
     };
 
-    localStorage.setItem("formData", JSON.stringify(formData));
-    document.getElementById("formMessage").textContent = "Дані успішно збережено!";
+    const existing = JSON.parse(localStorage.getItem("formDataList")) || [];
+    existing.push(formData);
+    localStorage.setItem("formDataList", JSON.stringify(existing));
+
+    console.log("Усі записи у localStorage:", existing);
+    responseEl.textContent = "Дані успішно збережено!";
     this.reset();
   });
 
+  function showSavedData() {
+    const data = JSON.parse(localStorage.getItem("formDataList") || "[]");
+    const output = document.getElementById("savedData");
+
+    if (data.length === 0) {
+      output.innerHTML = "<p>Збережених даних не знайдено.</p>";
+      return;
+    }
+
+    let html = "<h3>Збережені форми:</h3>";
+    data.forEach((entry, i) => {
+      html += `
+        <hr>
+        <p><strong>Запис #${i + 1}</strong> (${entry.timestamp})</p>
+        <p><strong>Ім’я:</strong> ${entry.name}</p>
+        <p><strong>Email:</strong> ${entry.email}</p>
+        <p><strong>Телефон:</strong> ${entry.phone}</p>
+        <p><strong>Улюблена гра:</strong> ${entry.game}</p>
+        <p><strong>Сервіси:</strong> ${entry.services.join(", ")}</p>
+        <p><strong>Повідомлення:</strong> ${entry.message || "(порожнє)"}</p>
+      `;
+    });
+
+    output.innerHTML = html;
+  }
+
   document.querySelectorAll(".navbar a").forEach(link => {
-    link.addEventListener("mouseover", () => link.style.color = "ffb000");
+    link.addEventListener("mouseover", () => link.style.color = "#ffb000");
     link.addEventListener("mouseout", () => link.style.color = "#fff");
   });
 </script>
+
 </body>
 </html>
