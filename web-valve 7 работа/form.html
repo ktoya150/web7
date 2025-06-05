@@ -59,13 +59,6 @@
       background-color: #ffaa00;
     }
 
-    .form-response {
-      text-align: center;
-      color: #e4a812;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-
     #savedData {
       text-align: left;
       color: #e4a812;
@@ -117,10 +110,8 @@
     <textarea id="message" name="message" rows="4"></textarea>
 
     <button type="submit">Надіслати</button>
-    <div class="form-response" id="formMessage"></div>
 
     <hr style="margin-top: 30px; border-color: #ffb000;" />
-
     <button type="button" onclick="showSavedData()">Показати збережені дані</button>
     <div id="savedData"></div>
   </form>
@@ -140,34 +131,31 @@
     const game = document.querySelector('input[name="game"]:checked');
     const services = Array.from(document.querySelectorAll('input[name="services"]:checked'));
     const message = document.getElementById("message").value.trim();
-    const responseEl = document.getElementById("formMessage");
-
-    responseEl.textContent = "";
 
     if (name.length < 2) {
-      responseEl.textContent = "Ім’я повинно містити щонайменше 2 символи.";
+      alert("Ім’я повинно містити щонайменше 2 символи.");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      responseEl.textContent = "Невірний формат email.";
+      alert("Невірний формат email.");
       return;
     }
 
     const phoneRegex = /^\+?[0-9]{10,13}$/;
     if (!phoneRegex.test(phone)) {
-      responseEl.textContent = "Невірний формат телефону. Приклад: +380501234567";
+      alert("Невірний формат телефону. Приклад: +380501234567");
       return;
     }
 
     if (!game) {
-      responseEl.textContent = "Оберіть улюблений продукт Valve.";
+      alert("Оберіть улюблений продукт Valve.");
       return;
     }
 
     if (services.length === 0) {
-      responseEl.textContent = "Оберіть хоча б один сервіс.";
+      alert("Оберіть хоча б один сервіс.");
       return;
     }
 
@@ -185,11 +173,13 @@
     existing.push(formData);
     localStorage.setItem("formDataList", JSON.stringify(existing));
 
-    console.log("Усі записи у localStorage:", existing);
-    responseEl.textContent = "Дані успішно збережено!";
     this.reset();
 
+    const oldMessage = document.getElementById("thanksMessage");
+    if (oldMessage) oldMessage.remove();
+
     const thanks = document.createElement("p");
+    thanks.id = "thanksMessage";
     thanks.textContent = "Дякуємо за заповнення форми!";
     thanks.style.color = "#ffb000";
     thanks.style.fontWeight = "bold";
@@ -197,6 +187,9 @@
     thanks.style.marginTop = "15px";
 
     document.getElementById("contactForm").appendChild(thanks);
+
+    document.title = "Форма надіслана";
+    console.log("Кількість input-елементів:", document.getElementsByTagName("input").length);
   });
 
   function showSavedData() {
