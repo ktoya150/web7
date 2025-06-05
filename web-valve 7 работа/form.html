@@ -188,6 +188,15 @@
     console.log("Усі записи у localStorage:", existing);
     responseEl.textContent = "Дані успішно збережено!";
     this.reset();
+
+    const thanks = document.createElement("p");
+    thanks.textContent = "Дякуємо за заповнення форми!";
+    thanks.style.color = "#ffb000";
+    thanks.style.fontWeight = "bold";
+    thanks.style.textAlign = "center";
+    thanks.style.marginTop = "15px";
+
+    document.getElementById("contactForm").appendChild(thanks);
   });
 
   function showSavedData() {
@@ -215,6 +224,17 @@
 
     output.innerHTML = html;
   }
+
+  document.querySelectorAll('input, textarea').forEach(field => {
+    field.addEventListener("focus", () => {
+      field.style.outline = "2px solid #ffb000";
+      field.style.backgroundColor = "#1c1c1c";
+    });
+    field.addEventListener("blur", () => {
+      field.style.outline = "none";
+      field.style.backgroundColor = "#1a1a1a";
+    });
+  });
 
   document.querySelectorAll(".navbar a").forEach(link => {
     link.addEventListener("mouseover", () => link.style.color = "#ffb000");
